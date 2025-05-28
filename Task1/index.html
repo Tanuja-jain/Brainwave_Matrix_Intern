@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Activities Planner</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="planner-container">
+    <h1>Daily Activities Planner</h1>
+
+    <div class="top-row">
+      <div class="mood-level">
+        <label>Mood Level:</label>
+        <div class="moods" id="mood-options">
+          <span data-mood="😞">😞</span>
+          <span data-mood="😐">😐</span>
+          <span data-mood="🙂">🙂</span>
+          <span data-mood="😊">😊</span>
+          <span data-mood="😍">😍</span>
+        </div>
+        <p>Selected Mood: <span id="selected-mood">None</span></p>
+      </div>
+      <div class="date-section">
+        <label for="date">Date:</label>
+        <input type="date" id="date" />
+        <div class="weekdays" id="weekdays">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <div class="time-activities box">
+        <h3>Time | Activities</h3>
+        <ul id="schedule-list"></ul>
+        <input type="text" id="time" placeholder="Time (e.g., 10:00 AM)">
+        <input type="text" id="activity" placeholder="Activity">
+        <button onclick="addSchedule()">Add</button>
+      </div>
+
+      <div class="affirmation box">
+        <h3>Daily Affirmation</h3>
+        <textarea placeholder="Write your affirmation here..."></textarea>
+      </div>
+
+      <div class="workouts box">
+        <h3>Today's Workouts</h3>
+        <label>Jogging: <input type="number" min="0" placeholder="Mins"></label>
+        <label>Yoga: <input type="number" min="0" placeholder="Mins"></label>
+        <label>Cycling: <input type="number" min="0" placeholder="Mins"></label>
+      </div>
+
+      <div class="remember box">
+        <h3>Important Things to Remember</h3>
+        <textarea placeholder="Write things to remember..."></textarea>
+      </div>
+
+      <div class="intake box">
+        <h3>Water Intake</h3>
+        <div class="glasses" id="water-glasses"></div>
+        <p>Glasses Drunk: <span id="water-count">0</span>/8</p>
+
+        <h3>Fruit Intake</h3>
+        <div class="fruits" id="fruit-apples"></div>
+        <p>Fruits Eaten: <span id="fruit-count">0</span>/5</p>
+      </div>
+
+      <div class="meals box">
+        <h3>Meal Plans</h3>
+        <label>Breakfast: <input type="text" placeholder="Your plan..."></label>
+        <label>Lunch: <input type="text" placeholder="Your plan..."></label>
+        <label>Dinner: <input type="text" placeholder="Your plan..."></label>
+      </div>
+
+      <div class="notes box">
+        <h3>Notes</h3>
+        <textarea placeholder="Write notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* style.css */
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #fbd3e9 0%, #bb377d 100%);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.planner-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #bb377d;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mood-level, .date-section {
+  flex: 1;
+  background: #fff0f5;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.moods span {
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.moods span.selected {
+  transform: scale(1.2);
+  color: #bb377d;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.box {
+  background: #fff0f5;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #bb377d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #a62c65;
+}
+
+.glasses span, .fruits span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #eee;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.glasses span.full, .fruits span.eaten {
+  background: #bb377d;
+}
+
+.weekdays span {
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 5px;
+  background: #eee;
+  color: #aaa;
+}
+
+.weekdays span.current-day {
+  background: #bb377d;
+  color: white;
+  font-weight: bold;
+}
