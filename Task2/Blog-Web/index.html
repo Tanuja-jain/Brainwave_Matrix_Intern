@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f3f6f9;
+      font-family: 'Poppins', sans-serif;
+    }
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .card:hover {
+      transform: scale(1.01);
+      transition: 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand fw-semibold text-primary" href="#">Blogify</a>
+      <div id="navUserArea">
+        <!-- Dynamic user controls will appear here -->
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-bold text-dark">Recent Blog Posts</h2>
+      <a href="new-post.html" class="btn btn-success">+ New Post</a>
+    </div>
+    <div class="row" id="blogList"></div>
+  </main>
+
+  <script>
+    const userArea = document.getElementById("navUserArea");
+    const user = JSON.parse(sessionStorage.getItem("loggedInUser"));
+
+    if (user) {
+      userArea.innerHTML = `
+        <span class="me-3">Welcome, <strong>${user.name}</strong></span>
+        <button onclick="logout()" class="btn btn-outline-danger btn-sm">Logout</button>
+      `;
+    } else {
+      userArea.innerHTML = `
+        <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
+      `;
+    }
+
+    function logout() {
+      sessionStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <script src="js/blog.js"></script>
+</body>
+</html>
